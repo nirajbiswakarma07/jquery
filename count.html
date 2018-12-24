@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+<textarea cols="100" rows="30" placeholder="Enter text here">I am a noob in coding.
+</textarea>
+<br>
+<button type="button">Number of words??</button>
+
+<script>
+  $(document).ready(function(){
+       $("button").click(function(){
+           var words = $.trim($("textarea").val()).split(" ");
+           // var y = $("textarea").val();
+           // console.log(y);
+           alert(words.length);
+        });
+    });
+
+
+</script>
+
+</body>
+</html>
