@@ -9,16 +9,26 @@ button{
 	color: black;
 	font-size: 1em;
 }
-body{
-	background-image: url('count.jpg');
-	display: block;
-	position:fixed;
-}
+
 #asd{
 	font-size: 2em;
 	color: purple;
 }
+.sad{
+	font-size: 2em;
+	color: purple;
+}
+
 
 #demo{
 	color: green;
+}
+#demo3{
+	font-size: 1.5em;
+}
+#demo4{
+	font-size: 1.5em;
+}
+#demo5{
+	font-size: 1.5em;
 }

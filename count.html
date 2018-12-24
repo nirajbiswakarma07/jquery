@@ -6,38 +6,105 @@
 	<link rel="stylesheet" type="text/css" href="./stylsheet/style.css">
 </head>
 <body>
+	
+<p id="asd">Number of words: <span id="demo">0</span></p>
+
+<p class="sad"> Timer : <span id="demo2">00:00</span></p>
+
+<p class="sad"> Words per minute is :<span id="word">0</span> </p>
 <div class="container">
-</div>
-<p id="asd">Number of words: <span id=demo>0</span></p>
 <textarea onkeyup="myfunction()" id="count" cols="100" rows="30" placeholder="Enter text here">
-</textarea>
+</textarea><br>
 </div>
-<br>
-<!-- <button type="button"><b>Number of words??</b></button> -->
-<br>
+<button type="button" id="demo3" onclick="myTimer()" ><b>START</b></button> &nbsp;
+<button type="button" id="demo4" onclick="stop()" ><b>STOP</b></button> &nbsp;
+<button type="button" id="demo5" onclick="reset()"><b>RESET???? Don't Press Me.Press F5</b></button>
 <script>
  // $(document).ready(function(){
    //     $("button").click(function(){
        //     var words = $("#count").val().split(" ").length;
        //      alert("Number of words: "+words);
 
+
+var wordss=0;
+var timerStarted=false;
     function myfunction(){
        	var x=document.getElementById("count");
        	var words = x.value.split(" ")
        		for(var i=0;i<words.length;i++){
 				if(words[i]!=""){
 				document.getElementById("demo").innerHTML=words.length;
-	
         	}
 
         	else{
-        			var y = words.splice("",1);
+        			var y = words.splice(" ",1);
         			i--;
         			document.getElementById("demo").innerHTML=words.length;
 				}
 	}
-		    console.log(words);
+	wordss=words.length;
+	if(!timerStarted){
+	timerStarted=true;
+	myTimer();
+	}
+	wpmin();
 }
+
+
+var id=document.getElementById('demo2');
+var min = 0;
+var sec = 0;
+var x;
+var y;
+
+function myTimer(){
+		
+	if(!timerStarted){
+		return
+	}
+	if(sec<=9){
+		id.innerHTML=min+":"+"0"+sec;
+		}
+	else
+		{
+			id.innerHTML=min+":"+sec;
+		}
+		sec++;
+		if(sec==60){
+			min++;
+			sec=0;
+		}	
+
+y=min*60+sec-1;			
+x=setTimeout(myTimer,1000);
+}
+
+
+function stop(){
+	clearInterval(x);
+	alert("Done")
+}
+function reset(){
+	min=0;
+	sec=0;
+	id.innerHTML=min+":"+sec;
+	document.getElementById("demo").innerHTML=0;
+	timerStarted=false;
+
+	document.getElementById("count").value="";
+}
+
+function wpmin(){
+
+document.getElementById("word").innerHTML=wordss/60;
+}
+// $(document).ready(function(){
+//   $("#demo4").click(function(){
+//     alert("It took you "+id.innerHTML)
+//     $("#demo2").hide();
+//    });
+// });
+
 
 
     //     });
