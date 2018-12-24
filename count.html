@@ -6,24 +6,40 @@
 	<link rel="stylesheet" type="text/css" href="./stylsheet/style.css">
 </head>
 <body>
-
-<textarea cols="100" rows="30" placeholder="Enter text here">I am noob in coding.
+<div class="container">
+</div>
+<p>Number of words: <span id=demo>0</span></p>
+<textarea onkeyup="myfunction()" id="count" cols="100" rows="30" placeholder="Enter text here">
 </textarea>
+</div>
 <br>
-<button type="button"><b>Number of words??</b></button>
-
+<!-- <button type="button"><b>Number of words??</b></button> -->
+<br>
 <script>
-  $(document).ready(function(){
-       $("button").click(function(){
-           var words = $.trim($("textarea").val()).split(" ");
-           // var y = $("textarea").val();
-           // console.log(y);
-           alert(words.length);
-        });
-    });
+ // $(document).ready(function(){
+   //     $("button").click(function(){
+       //     var words = $("#count").val().split(" ").length;
+       //      alert("Number of words: "+words);
 
+    function myfunction(){
+       	var x=document.getElementById("count");
+       	var words = x.value.split(" ")
+       		for(var i=0;i<words.length;i++){
+				if(words[i]!=""){
+				document.getElementById("demo").innerHTML=words.length;
+	
+        	}
 
+        	else{
+        			var y = words.splice("",1);
+        			i--;
+        			document.getElementById("demo").innerHTML=words.length;
+				}
+	}
+		    console.log(words);
+}
+    //     });
+    // });
 </script>
-
 </body>
 </html>
